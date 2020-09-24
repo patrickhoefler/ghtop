@@ -28,10 +28,6 @@ func newCmdTopics(outWriter io.Writer, fetchRepos internal.RepoFetcher) (cmd *co
 			}
 
 			for _, repo := range fetchRepos.Fetch(numberOfRepos) {
-				if repo == nil {
-					continue
-				}
-
 				for _, topic := range repo.Topics {
 					topicCounts[topic]++
 				}
