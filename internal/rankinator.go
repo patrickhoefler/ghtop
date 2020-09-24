@@ -23,15 +23,13 @@ type Rankinator struct {
 }
 
 // Get returns the calculated rank.
-// Please note that the values need to be supplied either in ascending or in descending order.
+// Note that the values need to be supplied either in ascending or in descending order.
 func (rankinator *Rankinator) Get(value int) (rank int, err error) {
-	if rankinator.lastRank > 0 {
-		setSortOrder(rankinator, value)
+	setSortOrder(rankinator, value)
 
-		err := checkSortOrder(rankinator, value)
-		if err != nil {
-			return 0, err
-		}
+	err = checkSortOrder(rankinator, value)
+	if err != nil {
+		return
 	}
 
 	if value == rankinator.lastValue {
@@ -45,27 +43,34 @@ func (rankinator *Rankinator) Get(value int) (rank int, err error) {
 	rankinator.lastRank = rank
 	rankinator.lastValue = value
 	rankinator.sameValueCount = 0
+
 	return
 }
 
-func setSortOrder(r *Rankinator, value int) {
-	if r.sortOrder != unknown {
+func setSortOrder(rankinator *Rankinator, value int) {
+	// Don't set the order on the first run
+	if rankinator.lastRank == 0 {
 		return
 	}
 
-	if value > r.lastValue {
-		r.sortOrder = ascending
-	} else if value < r.lastValue {
-		r.sortOrder = descending
+	// Don't change the sort order once it has been set
+	if rankinator.sortOrder != unknown {
+		return
+	}
+
+	if value > rankinator.lastValue {
+		rankinator.sortOrder = ascending
+	} else if value < rankinator.lastValue {
+		rankinator.sortOrder = descending
 	}
 }
 
-func checkSortOrder(r *Rankinator, value int) error {
-	if value > r.lastValue && r.sortOrder == descending {
+func checkSortOrder(rankinator *Rankinator, value int) error {
+	if value > rankinator.lastValue && rankinator.sortOrder == descending {
 		return errors.New("sort order changed from descending to ascending")
 	}
 
-	if value < r.lastValue && r.sortOrder == ascending {
+	if value < rankinator.lastValue && rankinator.sortOrder == ascending {
 		return errors.New("sort order changed from ascending to descending")
 	}
 
