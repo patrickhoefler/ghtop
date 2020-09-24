@@ -1,7 +1,7 @@
 # ghtop
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/patrickhoefler/ghtop)](https://goreportcard.com/report/github.com/patrickhoefler/ghtop)
-FIXME [![Maintainability](https://api.codeclimate.com/v1/badges/9cb704bb12bd5ae6208d/maintainability)](https://codeclimate.com/github/patrickhoefler/ghtop/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/bc77f3cc2bd774e8d33f/maintainability)](https://codeclimate.com/github/patrickhoefler/ghtop/maintainability)
 
 ghtop is a command line utility written in Go that displays information about the most starred GitHub repos.
 
