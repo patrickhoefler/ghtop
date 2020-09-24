@@ -25,9 +25,9 @@ type Rankinator struct {
 // Get returns the calculated rank.
 // Please note that the values need to be supplied either in ascending or in descending order.
 func (rankinator *Rankinator) Get(value int) (rank int, err error) {
-	setSortOrder(rankinator, value)
-
 	if rankinator.lastRank > 0 {
+		setSortOrder(rankinator, value)
+
 		err := checkSortOrder(rankinator, value)
 		if err != nil {
 			return 0, err
