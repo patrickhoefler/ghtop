@@ -14,47 +14,33 @@ const (
 	defaultNumberOfRepos = 100
 	minNumberOfRepos     = 1
 	maxNumberOfRepos     = 1000
-	minNumberOfResults   = 1
-	maxNumberOfResults   = 1000
+
+	minNumberOfResults = 1
+	maxNumberOfResults = 1000
 )
 
-type numberOfReposValue int
+type intMinMax struct {
+	value int64
+	min   int64
+	max   int64
+}
 
-func (n *numberOfReposValue) Set(s string) (err error) {
+func (i *intMinMax) Set(s string) (err error) {
 	value, err := strconv.ParseInt(s, 0, 64)
 	if err != nil {
 		return
 	}
 
-	if (value < minNumberOfRepos) || (value > maxNumberOfRepos) {
-		err = fmt.Errorf("number of repos must be between %d and %d", minNumberOfRepos, maxNumberOfRepos)
+	if (value < i.min) || (value > i.max) {
+		err = fmt.Errorf("value must be between %d and %d", i.min, i.max)
 		return
 	}
 
-	*n = numberOfReposValue(value)
+	i.value = value
 	return
 }
-func (n *numberOfReposValue) String() string { return strconv.Itoa(int(*n)) }
-func (n *numberOfReposValue) Type() string   { return "int" }
-
-type numberOfResultsValue int
-
-func (n *numberOfResultsValue) Set(s string) (err error) {
-	value, err := strconv.ParseInt(s, 0, 64)
-	if err != nil {
-		return
-	}
-
-	if (value < minNumberOfResults) || (value > maxNumberOfResults) {
-		err = fmt.Errorf("number of Results must be between %d and %d", minNumberOfResults, maxNumberOfResults)
-		return
-	}
-
-	*n = numberOfResultsValue(value)
-	return
-}
-func (n *numberOfResultsValue) String() string { return strconv.Itoa(int(*n)) }
-func (n *numberOfResultsValue) Type() string   { return "int" }
+func (i *intMinMax) String() string { return strconv.Itoa(int(i.value)) }
+func (i *intMinMax) Type() string   { return "int" }
 
 func newRootCmd(repoFetcher internal.RepoFetcher, out io.Writer) *cobra.Command {
 	rootCmd := &cobra.Command{
@@ -62,7 +48,7 @@ func newRootCmd(repoFetcher internal.RepoFetcher, out io.Writer) *cobra.Command 
 		Use:   "ghtop",
 	}
 
-	var numberOfRepos = numberOfReposValue(defaultNumberOfRepos)
+	var numberOfRepos = intMinMax{value: defaultNumberOfRepos, min: minNumberOfRepos, max: maxNumberOfRepos}
 	rootCmd.PersistentFlags().VarP(
 		&numberOfRepos,
 		"fetch-repos",
@@ -70,7 +56,7 @@ func newRootCmd(repoFetcher internal.RepoFetcher, out io.Writer) *cobra.Command 
 		fmt.Sprintf("Number of repos to fetch, between %d and %d", minNumberOfRepos, maxNumberOfRepos),
 	)
 
-	var numberOfResults = *new(numberOfResultsValue)
+	var numberOfResults = intMinMax{min: minNumberOfResults, max: maxNumberOfResults}
 	rootCmd.PersistentFlags().VarP(
 		&numberOfResults,
 		"top",
