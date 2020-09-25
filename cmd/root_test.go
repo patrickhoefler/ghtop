@@ -13,3 +13,18 @@ func TestRootCmd(t *testing.T) {
 		t.Fatalf("Could not run root command: %s", err)
 	}
 }
+
+func TestExecute(t *testing.T) {
+	tests := []struct {
+		name string
+	}{
+		{
+			name: "default",
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			Execute()
+		})
+	}
+}
