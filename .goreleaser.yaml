@@ -11,6 +11,15 @@ changelog:
       - '^docs:'
       - '^test:'
 
+dockers:
+  - binaries:
+      - ghtop
+    image_templates:
+      - 'patrickhoefler/ghtop:latest'
+      - 'patrickhoefler/ghtop:{{ .Major }}'
+      - 'patrickhoefler/ghtop:{{ .Major }}.{{ .Minor }}'
+      - 'patrickhoefler/ghtop:{{ .Major }}.{{ .Minor }}.{{ .Patch }}'
+
 brews:
   - tap:
       owner: patrickhoefler
