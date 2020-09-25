@@ -10,3 +10,11 @@ changelog:
     exclude:
       - '^docs:'
       - '^test:'
+
+brews:
+  - tap:
+      owner: patrickhoefler
+      name: homebrew-ghtop
+
+    homepage: https://github.com/patrickhoefler/ghtop
+    description: 'Get information about the most starred GitHub repos'
