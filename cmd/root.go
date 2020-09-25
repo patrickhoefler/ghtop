@@ -6,7 +6,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/patrickhoefler/ghtop/internal"
+	"github.com/patrickhoefler/ghtop/internal/fetching"
 	"github.com/spf13/cobra"
 )
 
@@ -42,7 +42,7 @@ func (i *intMinMax) Set(s string) (err error) {
 func (i *intMinMax) String() string { return strconv.Itoa(int(i.value)) }
 func (i *intMinMax) Type() string   { return "int" }
 
-func newRootCmd(repoFetcher internal.Fetcher, out io.Writer) *cobra.Command {
+func newRootCmd(repoFetcher fetching.Fetcher, out io.Writer) *cobra.Command {
 	rootCmd := &cobra.Command{
 		Short: "ghtop displays information about the most starred GitHub repos.",
 		Use:   "ghtop",
@@ -76,7 +76,7 @@ func newRootCmd(repoFetcher internal.Fetcher, out io.Writer) *cobra.Command {
 // Execute adds all child commands to the root command and sets flags appropriately.
 // This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
-	newRootCmd(internal.NewGitHubRepoSearchClient(), os.Stdout).Execute()
+	newRootCmd(fetching.NewGitHubRepoSearchClient(), os.Stdout).Execute()
 }
 
 func getPersistentFlags(cmd *cobra.Command) (numberOfRepos int, numberOfResults int) {

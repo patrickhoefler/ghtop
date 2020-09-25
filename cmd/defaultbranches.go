@@ -6,11 +6,12 @@ import (
 	"sort"
 	"text/tabwriter"
 
-	"github.com/patrickhoefler/ghtop/internal"
+	"github.com/patrickhoefler/ghtop/internal/fetching"
+	"github.com/patrickhoefler/ghtop/internal/ranking"
 	"github.com/spf13/cobra"
 )
 
-func newCmdStats(outWriter io.Writer, repoClient internal.Fetcher) (cmd *cobra.Command) {
+func newCmdStats(outWriter io.Writer, repoClient fetching.Fetcher) (cmd *cobra.Command) {
 	cmd = &cobra.Command{
 		Use:   "defaultbranches",
 		Short: "Ranked list of default branch names based on the most starred repos",
@@ -38,7 +39,7 @@ func newCmdStats(outWriter io.Writer, repoClient internal.Fetcher) (cmd *cobra.C
 			})
 
 			output := tabwriter.NewWriter(outWriter, 0, 0, 3, ' ', 0)
-			rankinator := new(internal.Rankinator)
+			rankinator := new(ranking.Rankinator)
 
 			fmt.Fprintln(output, "Rank\tCount\tBranch Name")
 			for _, name := range defaultBranches {

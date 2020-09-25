@@ -1,4 +1,4 @@
-package internal
+package fetching
 
 import (
 	"github.com/google/go-github/v32/github"

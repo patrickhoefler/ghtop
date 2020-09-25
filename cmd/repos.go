@@ -5,11 +5,12 @@ import (
 	"io"
 	"text/tabwriter"
 
-	"github.com/patrickhoefler/ghtop/internal"
+	"github.com/patrickhoefler/ghtop/internal/fetching"
+	"github.com/patrickhoefler/ghtop/internal/ranking"
 	"github.com/spf13/cobra"
 )
 
-func newCmdRepos(outWriter io.Writer, repoClient internal.Fetcher) (cmd *cobra.Command) {
+func newCmdRepos(outWriter io.Writer, repoClient fetching.Fetcher) (cmd *cobra.Command) {
 	cmd = &cobra.Command{
 		Use:   "repos",
 		Short: "Ranked list of the most starred repos",
@@ -18,7 +19,7 @@ func newCmdRepos(outWriter io.Writer, repoClient internal.Fetcher) (cmd *cobra.C
 			numberOfRepos, numberOfResults := getPersistentFlags(cmd)
 
 			output := tabwriter.NewWriter(outWriter, 0, 0, 3, ' ', 0)
-			rankinator := new(internal.Rankinator)
+			rankinator := new(ranking.Rankinator)
 
 			fmt.Fprintln(output, "Rank\tStars\tRepo\tDescription")
 			for _, repo := range repoClient.Fetch(numberOfRepos) {

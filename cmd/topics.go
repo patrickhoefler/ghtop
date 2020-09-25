@@ -6,11 +6,12 @@ import (
 	"sort"
 	"text/tabwriter"
 
-	"github.com/patrickhoefler/ghtop/internal"
+	"github.com/patrickhoefler/ghtop/internal/fetching"
+	"github.com/patrickhoefler/ghtop/internal/ranking"
 	"github.com/spf13/cobra"
 )
 
-func newCmdTopics(outWriter io.Writer, repoClient internal.Fetcher) (cmd *cobra.Command) {
+func newCmdTopics(outWriter io.Writer, repoClient fetching.Fetcher) (cmd *cobra.Command) {
 	cmd = &cobra.Command{
 		Use:   "topics",
 		Short: "Ranked list of topics based on the most starred repos",
@@ -40,7 +41,7 @@ func newCmdTopics(outWriter io.Writer, repoClient internal.Fetcher) (cmd *cobra.
 			})
 
 			output := tabwriter.NewWriter(outWriter, 0, 0, 3, ' ', 0)
-			rankinator := new(internal.Rankinator)
+			rankinator := new(ranking.Rankinator)
 
 			fmt.Fprintln(output, "Rank\tCount\tTopic")
 			for _, name := range topics {
