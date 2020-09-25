@@ -20,6 +20,8 @@ jobs:
       env:
         CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
       with:
+        coverageCommand: go test ./... -coverprofile=coverage.out
+        coverageLocations: ${{github.workspace}}/coverage.out
         debug: true
 
   other:
