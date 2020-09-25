@@ -1,7 +1,7 @@
 package internal
 
 import (
-	"errors"
+	"fmt"
 )
 
 type sortOrder int
@@ -67,11 +67,19 @@ func (rankinator *Rankinator) setSortOrder(value int) {
 
 func (rankinator *Rankinator) checkSortOrder(value int) error {
 	if value > rankinator.lastValue && rankinator.sortOrder == descending {
-		return errors.New("sort order changed from descending to ascending")
+		return fmt.Errorf(
+			"sort order changed from descending to ascending (last value: %d, current value: %d)",
+			rankinator.lastValue,
+			value,
+		)
 	}
 
 	if value < rankinator.lastValue && rankinator.sortOrder == ascending {
-		return errors.New("sort order changed from ascending to descending")
+		return fmt.Errorf(
+			"sort order changed from ascending to descending (last value: %d, current value: %d)",
+			rankinator.lastValue,
+			value,
+		)
 	}
 
 	return nil

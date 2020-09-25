@@ -10,7 +10,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func newCmdStats(outWriter io.Writer, fetchRepos internal.RepoFetcher) (cmd *cobra.Command) {
+func newCmdStats(outWriter io.Writer, fetchRepos internal.Fetcher) (cmd *cobra.Command) {
 	cmd = &cobra.Command{
 		Use:   "defaultbranches",
 		Short: "Ranked list of default branch names based on the most starred repos",

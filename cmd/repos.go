@@ -9,7 +9,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func newCmdRepos(outWriter io.Writer, fetchRepos internal.RepoFetcher) (cmd *cobra.Command) {
+func newCmdRepos(outWriter io.Writer, fetchRepos internal.Fetcher) (cmd *cobra.Command) {
 	cmd = &cobra.Command{
 		Use:   "repos",
 		Short: "Ranked list of the most starred repos",

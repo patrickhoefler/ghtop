@@ -8,6 +8,7 @@ import (
 	"testing"
 
 	"github.com/mattn/go-shellwords"
+	"github.com/patrickhoefler/ghtop/internal"
 )
 
 func Test_topics(t *testing.T) {
@@ -37,7 +38,7 @@ func Test_topics(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			buf := new(bytes.Buffer)
-			rootCmd := newRootCmd(&mockRepoFetcher{topics: []string{"foo", "bar"}}, buf)
+			rootCmd := newRootCmd(internal.NewMockRepoSearchClient(), buf)
 
 			args, err := shellwords.Parse(tt.cmd)
 			if err != nil {

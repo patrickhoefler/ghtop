@@ -10,7 +10,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func newCmdTopics(outWriter io.Writer, fetchRepos internal.RepoFetcher) (cmd *cobra.Command) {
+func newCmdTopics(outWriter io.Writer, fetchRepos internal.Fetcher) (cmd *cobra.Command) {
 	cmd = &cobra.Command{
 		Use:   "topics",
 		Short: "Ranked list of topics based on the most starred repos",
