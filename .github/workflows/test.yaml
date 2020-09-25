@@ -16,7 +16,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Test
       run: go test ./...
-    - uses: paambaati/codeclimate-action@v2.2.4
+    - uses: paambaati/codeclimate-action@v2.7.1
       env:
         CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
       with:
