@@ -8,6 +8,7 @@ import (
 	"testing"
 
 	"github.com/mattn/go-shellwords"
+	"github.com/patrickhoefler/ghtop/internal/fetching"
 )
 
 func Test_repos(t *testing.T) {
@@ -26,6 +27,11 @@ func Test_repos(t *testing.T) {
 			name:          "min valid repo count",
 			cmd:           "repos --fetch-repos 1",
 			expectResults: 1,
+		},
+		{
+			name:          "more than one page",
+			cmd:           "repos --fetch-repos 123",
+			expectResults: 123,
 		},
 		{
 			name:          "max valid repo count",
@@ -82,7 +88,8 @@ func Test_repos(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			buf := new(bytes.Buffer)
-			rootCmd := newRootCmd(new(mockRepoFetcher), buf)
+
+			rootCmd := newRootCmd(fetching.NewMockRepoSearchClient(), buf)
 
 			args, err := shellwords.Parse(tt.cmd)
 			if err != nil {
