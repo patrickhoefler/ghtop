@@ -6,9 +6,22 @@
 
 ghtop is a command line utility written in Go that displays information about the most starred GitHub repos.
 
-## Build
+## Getting Started
 
-`go build`
+### Homebrew
+
+```shell
+brew tap patrickhoefler/ghtop
+brew install ghtop
+ghtop
+```
+
+### Build
+
+```shell
+go build
+./ghtop
+```
 
 ## Example Outputs
 
