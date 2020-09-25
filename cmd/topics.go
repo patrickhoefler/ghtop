@@ -18,14 +18,7 @@ func newCmdTopics(outWriter io.Writer, fetchRepos internal.RepoFetcher) (cmd *co
 		Run: func(cmd *cobra.Command, args []string) {
 			topicCounts := map[string]int{}
 
-			numberOfRepos, err := cmd.Flags().GetInt("fetch-repos")
-			if err != nil {
-				panic(err)
-			}
-			numberOfResults, err := cmd.Flags().GetInt("top")
-			if err != nil {
-				panic(err)
-			}
+			numberOfRepos, numberOfResults := getPersistentFlags(cmd)
 
 			for _, repo := range fetchRepos.Fetch(numberOfRepos) {
 				for _, topic := range repo.Topics {

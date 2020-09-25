@@ -78,3 +78,17 @@ func newRootCmd(repoFetcher internal.RepoFetcher, out io.Writer) *cobra.Command 
 func Execute() {
 	newRootCmd(new(internal.GitHubRepoFetcher), os.Stdout).Execute()
 }
+
+func getPersistentFlags(cmd *cobra.Command) (numberOfRepos int, numberOfResults int) {
+	numberOfRepos, err := cmd.Flags().GetInt("fetch-repos")
+	if err != nil {
+		panic(err)
+	}
+
+	numberOfResults, err = cmd.Flags().GetInt("top")
+	if err != nil {
+		panic(err)
+	}
+
+	return
+}
