@@ -9,7 +9,10 @@ type mockRepoFetcher struct {
 // Fetch always returns an empty []*github.Repository (for now)
 // TODO: Clean up
 func (mrf *mockRepoFetcher) Fetch(numberOfRepos int) (repos []*github.Repository) {
-	repos = make([]*github.Repository, numberOfRepos)
+	for repoCounter := 0; repoCounter < numberOfRepos; repoCounter++ {
+		repos = append(repos, &github.Repository{})
+	}
+
 	if len(mrf.topics) == 0 {
 		mrf.topics = []string{"foo", "bar"}
 	}
