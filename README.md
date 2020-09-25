@@ -8,6 +8,12 @@ ghtop is a command line utility written in Go that displays information about th
 
 ## Getting Started
 
+### Docker
+
+```shell
+docker run --rm ghcr.io/patrickhoefler/ghtop
+```
+
 ### Homebrew
 
 ```shell
