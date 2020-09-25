@@ -1,0 +1,12 @@
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goarch:
+      - amd64
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
