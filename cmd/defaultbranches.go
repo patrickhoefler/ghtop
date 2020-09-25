@@ -10,7 +10,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func newCmdStats(outWriter io.Writer, fetchRepos internal.Fetcher) (cmd *cobra.Command) {
+func newCmdStats(outWriter io.Writer, repoClient internal.Fetcher) (cmd *cobra.Command) {
 	cmd = &cobra.Command{
 		Use:   "defaultbranches",
 		Short: "Ranked list of default branch names based on the most starred repos",
@@ -20,7 +20,7 @@ func newCmdStats(outWriter io.Writer, fetchRepos internal.Fetcher) (cmd *cobra.C
 
 			numberOfRepos, numberOfResults := getPersistentFlags(cmd)
 
-			for _, repo := range fetchRepos.Fetch(numberOfRepos) {
+			for _, repo := range repoClient.Fetch(numberOfRepos) {
 				defaultBranchCounts[repo.GetDefaultBranch()]++
 			}
 

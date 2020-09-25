@@ -9,7 +9,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func newCmdRepos(outWriter io.Writer, fetchRepos internal.Fetcher) (cmd *cobra.Command) {
+func newCmdRepos(outWriter io.Writer, repoClient internal.Fetcher) (cmd *cobra.Command) {
 	cmd = &cobra.Command{
 		Use:   "repos",
 		Short: "Ranked list of the most starred repos",
@@ -21,7 +21,7 @@ func newCmdRepos(outWriter io.Writer, fetchRepos internal.Fetcher) (cmd *cobra.C
 			rankinator := new(internal.Rankinator)
 
 			fmt.Fprintln(output, "Rank\tStars\tRepo\tDescription")
-			for _, repo := range fetchRepos.Fetch(numberOfRepos) {
+			for _, repo := range repoClient.Fetch(numberOfRepos) {
 				rank, err := rankinator.Get(repo.GetStargazersCount())
 				if err != nil {
 					panic(err)

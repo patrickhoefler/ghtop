@@ -33,9 +33,12 @@ func (
 	for repoCounter := 0; repoCounter < opts.PerPage; repoCounter++ {
 		stargazerCount := new(int)
 		*stargazerCount = 10000000 - (opts.Page-1)*opts.PerPage - repoCounter
+		defaultBranch := new(string)
+		*defaultBranch = "main"
 
 		if *stargazerCount == 10000000 {
 			repos = append(repos, &github.Repository{
+				DefaultBranch:   defaultBranch,
 				StargazersCount: stargazerCount,
 				Topics:          []string{"foo"},
 			})

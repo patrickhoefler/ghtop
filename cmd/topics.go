@@ -10,7 +10,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func newCmdTopics(outWriter io.Writer, fetchRepos internal.Fetcher) (cmd *cobra.Command) {
+func newCmdTopics(outWriter io.Writer, repoClient internal.Fetcher) (cmd *cobra.Command) {
 	cmd = &cobra.Command{
 		Use:   "topics",
 		Short: "Ranked list of topics based on the most starred repos",
@@ -20,7 +20,7 @@ func newCmdTopics(outWriter io.Writer, fetchRepos internal.Fetcher) (cmd *cobra.
 
 			numberOfRepos, numberOfResults := getPersistentFlags(cmd)
 
-			for _, repo := range fetchRepos.Fetch(numberOfRepos) {
+			for _, repo := range repoClient.Fetch(numberOfRepos) {
 				for _, topic := range repo.Topics {
 					topicCounts[topic]++
 				}
