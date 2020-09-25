@@ -15,10 +15,10 @@ dockers:
   - binaries:
       - ghtop
     image_templates:
-      - 'patrickhoefler/ghtop:latest'
-      - 'patrickhoefler/ghtop:{{ .Major }}'
-      - 'patrickhoefler/ghtop:{{ .Major }}.{{ .Minor }}'
-      - 'patrickhoefler/ghtop:{{ .Major }}.{{ .Minor }}.{{ .Patch }}'
+      - 'ghcr.io/patrickhoefler/ghtop:latest'
+      - 'ghcr.io/patrickhoefler/ghtop:{{ .Major }}'
+      - 'ghcr.io/patrickhoefler/ghtop:{{ .Major }}.{{ .Minor }}'
+      - 'ghcr.io/patrickhoefler/ghtop:{{ .Major }}.{{ .Minor }}.{{ .Patch }}'
 
 brews:
   - tap:
