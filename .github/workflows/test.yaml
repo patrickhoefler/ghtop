@@ -17,16 +17,21 @@ jobs:
       uses: actions/setup-go@v2
       with:
         go-version: ${{ matrix.go-version }}
+
     - name: Checkout code
       uses: actions/checkout@v2
+
     - name: Test with code coverage
       run: go test ./... -race -covermode=atomic -coverprofile=coverage.txt
-    - name: Build binaries and Docker container with GoReleaser
+
+    - name: Build binaries and Docker image with GoReleaser
       uses: goreleaser/goreleaser-action@v2
       with:
         args: release --snapshot --skip-publish
-    - name: Check if the container image has been built
-      run: docker image ls
+
+    - name: Run the built Docker image
+      run: docker run ghcr.io/patrickhoefler/ghtop:0.0.0
+
     - name: Upload code coverage
       uses: codecov/codecov-action@v1
 
