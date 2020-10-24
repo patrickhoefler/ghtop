@@ -2,5 +2,8 @@
   "extends": [
     "config:base",
     ":automergeMinor"
+  ],
+  "postUpdateOptions": [
+    "gomodTidy"
   ]
 }
