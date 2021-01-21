@@ -1,6 +1,6 @@
 
 ### SSL certs
-FROM ubuntu:latest@sha256:4e4bc990609ed865e07afc8427c30ffdddca5153fd4e82c20d8f0783a291e241 AS ubuntu
+FROM ubuntu:latest@sha256:3093096ee188f8ff4531949b8f6115af4747ec1c58858c091c8cb4579c39cc4e AS ubuntu
 
 # Because there is no "lock" mechanism for apt dependencies,
 # this step prevents a fully reproducible build
