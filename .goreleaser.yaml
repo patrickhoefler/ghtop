@@ -12,9 +12,7 @@ changelog:
       - '^test:'
 
 dockers:
-  - binaries:
-      - ghtop
-    image_templates:
+  - image_templates:
       - 'ghcr.io/patrickhoefler/ghtop:latest'
       - 'ghcr.io/patrickhoefler/ghtop:{{ .Major }}'
       - 'ghcr.io/patrickhoefler/ghtop:{{ .Major }}.{{ .Minor }}'
