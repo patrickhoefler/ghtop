@@ -23,7 +23,7 @@ dockers:
 brews:
   - tap:
       owner: patrickhoefler
-      name: homebrew-ghtop
+      name: homebrew-tap
 
     homepage: https://github.com/patrickhoefler/ghtop
     description: 'Get information about the most starred GitHub repos'

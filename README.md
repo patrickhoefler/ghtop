@@ -17,8 +17,7 @@ docker run --rm ghcr.io/patrickhoefler/ghtop
 ### Homebrew
 
 ```shell
-brew tap patrickhoefler/ghtop
-brew install ghtop
+brew install patrickhoefler/tap/ghtop
 ghtop
 ```
 
