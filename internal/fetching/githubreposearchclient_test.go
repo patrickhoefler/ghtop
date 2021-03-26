@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/google/go-github/v33/github"
+	"github.com/google/go-github/v34/github"
 )
 
 func TestNewGitHubRepoSearchClient(t *testing.T) {
