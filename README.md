@@ -31,7 +31,7 @@ go build
 ## Example Outputs
 
 ```text
-% ghtop
+❯ ghtop
 ghtop displays information about the most starred GitHub repos.
 
 Usage:
@@ -54,52 +54,55 @@ Use "ghtop [command] --help" for more information about a command.
 ### Repos
 
 ```text
-% ghtop repos --fetch-repos 10
+❯ ghtop repos --fetch-repos 10
 Rank   Stars    Repo                                     Description
-1      314955   freeCodeCamp/freeCodeCamp                freeCodeCamp.org's open source codebase and curriculum. Learn to code at home.
-2      251745   996icu/996.ICU                           Repo for counting stars and contributing. Press F to pay respect to glorious developers.
-3      172815   vuejs/vue                                🖖 Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web.
-4      160037   EbookFoundation/free-programming-books   :books: Freely available programming books
-5      156349   facebook/react                           A declarative, efficient, and flexible JavaScript library for building user interfaces.
-6      148694   tensorflow/tensorflow                    An Open Source Machine Learning Framework for Everyone
-7      144288   twbs/bootstrap                           The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.
-8      141365   sindresorhus/awesome                     😎 Awesome lists about all kinds of interesting topics
-9      135524   jwasham/coding-interview-university      A complete computer science study plan to become a software engineer.
-10     127687   getify/You-Dont-Know-JS                  A book series on JavaScript. @YDKJS on twitter.
+1      324809   freeCodeCamp/freeCodeCamp                freeCodeCamp.org's open-source codebase and curriculum. Learn to code for free.
+2      257304   996icu/996.ICU                           Repo for counting stars and contributing. Press F to pay respect to glorious developers.
+3      191342   EbookFoundation/free-programming-books   :books: Freely available programming books
+4      184155   vuejs/vue                                🖖 Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web.
+5      175156   jwasham/coding-interview-university      A complete computer science study plan to become a software engineer.
+6      169397   facebook/react                           A declarative, efficient, and flexible JavaScript library for building user interfaces.
+7      162589   sindresorhus/awesome                     😎 Awesome lists about all kinds of interesting topics
+8      161774   kamranahmedse/developer-roadmap          Roadmap to becoming a web developer in 2021
+9      156348   tensorflow/tensorflow                    An Open Source Machine Learning Framework for Everyone
+10     150739   twbs/bootstrap                           The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.
 ```
 
 ### Topics
 
 ```text
-% ghtop topics --top 10 --fetch-repos 1000
+❯ ghtop topics --top 10 --fetch-repos 1000
 Rank   Count   Topic
-1      156     javascript
-2      82      python
-3      62      react
-4      47      java
-4      47      nodejs
-6      46      go
-7      44      android
-8      42      awesome
-9      37      machine-learning
-10     35      awesome-list
+1      155     javascript
+2      81      python
+3      77      hacktoberfest
+4      67      react
+5      48      go
+5      48      nodejs
+7      47      java
+8      43      awesome
+9      42      android
+10     37      machine-learning
 ```
 
 ### Default Branches
 
 ```text
-% ghtop defaultbranches --top 10 --fetch-repos 1000
+❯ ghtop defaultbranches --top 10 --fetch-repos 1000
 Rank   Count   Branch Name
-1      875     master
-2      27      develop
-3      24      main
-4      20      dev
-5      6       next
-6      4       gh-pages
-7      3       devel
-7      3       trunk
+1      783     master
+2      116     main
+3      29      develop
+4      22      dev
+5      8       next
+6      3       devel
+6      3       gh-pages
+6      3       trunk
 9      2       3.x
+9      2       8.x
 9      2       canary
+9      2       development
+9      2       release
 9      2       v2
 ```
 
