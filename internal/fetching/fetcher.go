@@ -1,6 +1,6 @@
 package fetching
 
-import "github.com/google/go-github/v35/github"
+import "github.com/google/go-github/v36/github"
 
 // Fetcher defines the interface for repo fetchers
 type Fetcher interface {
