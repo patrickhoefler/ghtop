@@ -3,7 +3,7 @@ package fetching
 import (
 	"context"
 
-	"github.com/google/go-github/v35/github"
+	"github.com/google/go-github/v36/github"
 )
 
 // NewMockRepoSearchClient returns a new mock repo fetcher for testing
