@@ -21,7 +21,7 @@ brew install patrickhoefler/tap/ghtop
 ghtop
 ```
 
-### Build
+### Build from Source
 
 ```shell
 go build
