@@ -4,7 +4,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/bc77f3cc2bd774e8d33f/maintainability)](https://codeclimate.com/github/patrickhoefler/ghtop/maintainability)
 [![codecov](https://codecov.io/gh/patrickhoefler/ghtop/branch/main/graph/badge.svg)](https://codecov.io/gh/patrickhoefler/ghtop)
 
-ghtop is a command line utility written in Go that displays information about the most starred GitHub repos.
+ghtop lists the most starred GitHub repos and counts their topics and default branches.
 
 ## Getting Started
 
