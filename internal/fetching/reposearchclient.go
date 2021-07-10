@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/google/go-github/v36/github"
+	"github.com/google/go-github/v37/github"
 )
 
 const maxReposPerPage = 100
