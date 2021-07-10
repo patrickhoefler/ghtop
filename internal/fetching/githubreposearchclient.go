@@ -1,7 +1,7 @@
 package fetching
 
 import (
-	"github.com/google/go-github/v36/github"
+	"github.com/google/go-github/v37/github"
 )
 
 // NewGitHubRepoSearchClient returns a new GitHub repo fetcher

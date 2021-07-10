@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/google/go-github/v36/github"
+	"github.com/google/go-github/v37/github"
 )
 
 func TestNewMockRepoSearchClient(t *testing.T) {
