@@ -3,7 +3,7 @@ package fetching
 import (
 	"context"
 
-	"github.com/google/go-github/v37/github"
+	"github.com/google/go-github/v38/github"
 )
 
 type repositorieser interface {
