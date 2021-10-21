@@ -56,16 +56,16 @@ Use "ghtop [command] --help" for more information about a command.
 ```text
 ❯ ghtop repos --fetch-repos 10
 Rank   Stars    Repo                                     Description
-1      324809   freeCodeCamp/freeCodeCamp                freeCodeCamp.org's open-source codebase and curriculum. Learn to code for free.
-2      257304   996icu/996.ICU                           Repo for counting stars and contributing. Press F to pay respect to glorious developers.
-3      191342   EbookFoundation/free-programming-books   :books: Freely available programming books
-4      184155   vuejs/vue                                🖖 Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web.
-5      175156   jwasham/coding-interview-university      A complete computer science study plan to become a software engineer.
-6      169397   facebook/react                           A declarative, efficient, and flexible JavaScript library for building user interfaces.
-7      162589   sindresorhus/awesome                     😎 Awesome lists about all kinds of interesting topics
-8      161774   kamranahmedse/developer-roadmap          Roadmap to becoming a web developer in 2021
-9      156348   tensorflow/tensorflow                    An Open Source Machine Learning Framework for Everyone
-10     150739   twbs/bootstrap                           The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.
+1      334056   freeCodeCamp/freeCodeCamp                freeCodeCamp.org's open-source codebase and curriculum. Learn to code for free.
+2      259491   996icu/996.ICU                           Repo for counting stars and contributing. Press F to pay respect to glorious developers.
+3      208841   EbookFoundation/free-programming-books   :books: Freely available programming books
+4      195187   jwasham/coding-interview-university      A complete computer science study plan to become a software engineer.
+5      189527   vuejs/vue                                🖖 Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web.
+6      176439   facebook/react                           A declarative, efficient, and flexible JavaScript library for building user interfaces.
+7      174549   kamranahmedse/developer-roadmap          Roadmap to becoming a web developer in 2021
+8      172905   sindresorhus/awesome                     😎 Awesome lists about all kinds of interesting topics
+9      164934   public-apis/public-apis                  A collective list of free APIs
+10     160011   tensorflow/tensorflow                    An Open Source Machine Learning Framework for Everyone
 ```
 
 ### Topics
@@ -74,15 +74,15 @@ Rank   Stars    Repo                                     Description
 ❯ ghtop topics --top 10 --fetch-repos 1000
 Rank   Count   Topic
 1      155     javascript
-2      81      python
-3      77      hacktoberfest
-4      67      react
-5      48      go
-5      48      nodejs
-7      47      java
-8      43      awesome
-9      42      android
-10     37      machine-learning
+2      121     hacktoberfest
+3      87      python
+4      69      react
+5      50      nodejs
+6      49      go
+7      46      java
+8      45      awesome
+9      43      machine-learning
+10     41      android
 ```
 
 ### Default Branches
@@ -90,20 +90,19 @@ Rank   Count   Topic
 ```text
 ❯ ghtop defaultbranches --top 10 --fetch-repos 1000
 Rank   Count   Branch Name
-1      783     master
-2      116     main
-3      29      develop
-4      22      dev
-5      8       next
+1      733     master
+2      161     main
+3      32      develop
+4      21      dev
+5      7       next
 6      3       devel
 6      3       gh-pages
 6      3       trunk
-9      2       3.x
-9      2       8.x
-9      2       canary
-9      2       development
-9      2       release
-9      2       v2
+6      3       v2
+10     2       3.x
+10     2       8.x
+10     2       canary
+10     2       development
 ```
 
 ## License
