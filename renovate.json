@@ -1,11 +1,22 @@
 {
+  "automerge": true,
   "extends": [
     "config:base"
   ],
-  "automerge": true,
   "major": {
     "automerge": false
   },
+  "packageRules": [
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "ubuntu"
+      ],
+      "versioning": "regex:^(?<compatibility>[a-z]+)-?(?<minor>\\d+)?$"
+    }
+  ],
   "postUpdateOptions": [
     "gomodTidy"
   ]
