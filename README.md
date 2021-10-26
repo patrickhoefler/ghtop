@@ -8,13 +8,13 @@
 
 ## Getting Started
 
-### Docker
+### Docker / [nerdctl](https://github.com/containerd/nerdctl)
 
 ```shell
 docker run --rm ghcr.io/patrickhoefler/ghtop
 ```
 
-### Homebrew
+### [Homebrew](https://brew.sh/)
 
 ```shell
 brew install patrickhoefler/tap/ghtop
