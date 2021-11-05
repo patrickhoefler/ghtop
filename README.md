@@ -10,20 +10,20 @@
 
 ### Docker / [nerdctl](https://github.com/containerd/nerdctl)
 
-```shell
+```text
 docker run --rm ghcr.io/patrickhoefler/ghtop
 ```
 
 ### [Homebrew](https://brew.sh/)
 
-```shell
+```text
 brew install patrickhoefler/tap/ghtop
 ghtop
 ```
 
 ### Build from Source
 
-```shell
+```text
 go build
 ./ghtop
 ```
