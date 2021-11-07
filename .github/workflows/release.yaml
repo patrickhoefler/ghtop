@@ -31,4 +31,5 @@ jobs:
         with:
           args: release --rm-dist
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # needed for updating https://github.com/patrickhoefler/homebrew-tap
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
