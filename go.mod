@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/google/go-github/v39 v39.2.0
 	github.com/mattn/go-shellwords v1.0.12
-	github.com/spf13/cobra v1.2.1
+	github.com/spf13/cobra v1.3.0
 )
 
 require (
