@@ -30,7 +30,7 @@ jobs:
       run: docker run ghcr.io/patrickhoefler/ghtop:0.0.0
 
     - name: Upload code coverage
-      uses: codecov/codecov-action@v2
+      uses: codecov/codecov-action@v3
 
   native:
     strategy:
