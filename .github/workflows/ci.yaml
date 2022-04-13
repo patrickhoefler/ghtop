@@ -29,9 +29,6 @@ jobs:
     - name: Run the built Docker image
       run: docker run ghcr.io/patrickhoefler/ghtop:0.0.0
 
-    - name: Upload code coverage
-      uses: codecov/codecov-action@v2
-
   native:
     strategy:
       matrix:
