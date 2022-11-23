@@ -1,7 +1,6 @@
 # ghtop
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/patrickhoefler/ghtop)](https://goreportcard.com/report/github.com/patrickhoefler/ghtop)
-[![Maintainability](https://api.codeclimate.com/v1/badges/bc77f3cc2bd774e8d33f/maintainability)](https://codeclimate.com/github/patrickhoefler/ghtop/maintainability)
 
 `ghtop` lists the most starred GitHub repos and counts their topics and default branches.
 
