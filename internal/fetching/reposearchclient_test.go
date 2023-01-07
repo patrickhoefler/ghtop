@@ -3,7 +3,7 @@ package fetching
 import (
 	"testing"
 
-	"github.com/google/go-github/v48/github"
+	"github.com/google/go-github/v49/github"
 )
 
 func Test_newRepoSearchClient(t *testing.T) {
